@@ -1,15 +1,13 @@
-package MainClass;
+package DocGhiFile;
 
 import java.io.*;
 
-public class DocGhiFile {
+public class DocFile {
 
-	public DocGhiFile() {
-		// TODO Auto-generated constructor stub
-	
+	public DocFile() {
 	}
 	
-	// doc file
+	// ham doc file
 	public static String DocFile(String duongDan) { // tra ve noi dung file la 1 String
 		String noiDungBR= "";
 		String noiDungFile= "";
@@ -37,10 +35,7 @@ public class DocGhiFile {
 	            }
 	        }
 		}
-		return noiDungFile;
+		return noiDungFile; // tra ve mot String co gia tri la noi dung cua file vua doc
 	}
-	
-	// ghi file
-	
 	
 }

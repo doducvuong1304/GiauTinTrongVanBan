@@ -1,4 +1,4 @@
-package ThuatToan;
+package XuLi;
 
 public class GiaiMa {
 
