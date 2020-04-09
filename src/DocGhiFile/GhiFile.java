@@ -7,7 +7,7 @@ public class GhiFile {
 	public GhiFile() {
 	}
 	
-	// ham ghi file
+	// ham ghi file - o day ghi them noi dung chu khong ghi de len noi dung co san
 	public static void GhiFile(String duongDan, String noiDung) {
 		BufferedWriter bw = null;
 		FileWriter fw = null;
@@ -19,7 +19,7 @@ public class GhiFile {
 			}
 			fw = new FileWriter(file.getAbsoluteFile(), true);
 			bw = new BufferedWriter(fw);
-			bw.write(noiDung);
+			bw.write(noiDung); // ghi noi dung vao file
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
