@@ -2,6 +2,9 @@ package MainClass;
 import java.util.Scanner;
 
 import DocGhiFile.*;
+import XuLi.GiaiMa;
+import XuLi.GiauTin;
+import XuLi.KhoiPhuc;
 import XuLi.MaHoa;
 	
 public class HamMain {
@@ -51,11 +54,23 @@ public class HamMain {
 //		System.out.println("Ghi noi dung vao file thanh cong!");
 		
 		// test tinh nang ma hoa
+		System.out.println("Nhap noi dung hien thi: ");
+		String showText= scanner.nextLine();
+		
 		System.out.println("Nhap noi dung can ma hoa: ");
-		String noiDung= scanner.nextLine();
-		System.out.println("key= do dai chuoi la: " + MaHoa.TaoKey(noiDung));
-		noiDung= MaHoa.MaHoa(noiDung);
-		System.out.println("chuoi sau khi ma hoa: " + noiDung);
+		String hideText= scanner.nextLine();
+		
+		int key = MaHoa.TaoKey(hideText);
+		System.out.println("key= do dai chuoi la: " +key);
+		
+		String binary = MaHoa.MaHoa(hideText);
+		System.out.println("chuoi sau khi ma hoa: " + binary);
+		
+		String EncryptBinary = GiauTin.toSpaceAndTab(showText,binary);
+		System.out.println("Chuoi sau khi encrypt: "+EncryptBinary);
+		
+		String DecryptToBinary = GiaiMa.Decrypt(EncryptBinary, key);
+		System.out.println("Giai ma doan encrypt sang nhi phan: "+DecryptToBinary);
 	}
 
 }
