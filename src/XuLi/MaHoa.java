@@ -21,9 +21,8 @@ public class MaHoa {
 	}
 	
 	// tao key= do dai chuoi - truyen vao 1 String va tra ve do dai String
-	public static String TaoKey(String key) {
-		int doDaiChuoi= key.length();
-		key= String.valueOf(doDaiChuoi);
+	public static Integer TaoKey(String hideText) {
+		int key= hideText.length();
 		return key;
 	}
 	
