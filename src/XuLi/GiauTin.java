@@ -1,30 +1,21 @@
 package XuLi;
 
+import java.util.Scanner;
+
+import DocGhiFile.*;
+
+
 public class GiauTin {
 
-	public GiauTin() {
-		// TODO Auto-generated constructor stub
+	public GiauTin() { // constructor
 	}
-
-	public static String toSpaceAndTab(String showText, String binary) {
-		String SymbolTab = "\t";
-		String SymbolSpace = " ";
-		String Zero = "0";
-		String One = "1";
-
-		String encryptBinary = new String();
-		char[] arrayBinary = binary.toCharArray();
-		for (int i = 0; i < arrayBinary.length; i++) {
-			if (String.valueOf(arrayBinary[i]).equals(Zero)) {
-				encryptBinary += SymbolSpace;
-			} else {
-				encryptBinary += SymbolTab;
-			}
-		}
-		System.out.println("Doan text ma hoa :" + encryptBinary + "Muhahah");
-
-		String DataEncrypted = showText + encryptBinary;
-		return DataEncrypted;
+	
+	// tinh nang giau tin
+	public static void GiauTin(String tinGiau, String duongDan) {
+		tinGiau= MaHoa.MaHoa(tinGiau); // ma hoa tin giau
+		String noiDungFileGiau= DocFile.DocFile(duongDan); // doc noi dung file cover-text
+		int key= MaHoa.TaoKey(noiDungFileGiau); // tao key = do dai noi dung file cover-text
+		System.out.println("Key giau tin la: " + key);
+		GhiFile.GhiFile(duongDan, tinGiau); // giau tin vao file cover-text
 	}
-
 }

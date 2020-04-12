@@ -24,18 +24,32 @@ public class HamMain {
 	
 	// ham main cua chuong trinh
 	public static void main(String[] args) {
+		
 		// lua chon giau tin hoac khoi phuc
-//		String luaChon= LuaChon();
-//		int soChon = Integer.parseInt(luaChon);
-//		if (soChon== 0) {
-//			System.out.println("thuc hien giau tin");
-//		}
-//		else if (soChon== 1){
-//			System.out.println("thuc hien khoi phuc");
-//		}
-//		else {
-//			System.out.println("nhap sai roi! 0 hoac 1 thoi!");
-//		}
+		String luaChon= LuaChon();
+		int soChon = Integer.parseInt(luaChon);
+		if (soChon== 0) {
+			
+			// thuc hien tinh nang giau tin
+			System.out.println("0 => Thuc hien giau tin!");
+			System.out.println("Nhap noi dung tin giau: ");
+			String tinGiau= scanner.nextLine();
+			System.out.println("Nhap duong dan den file can giau tin: ");
+			String duongDanGiauTin= scanner.nextLine();
+			GiauTin.GiauTin(tinGiau, duongDanGiauTin);
+		}
+		
+		else if (soChon== 1){
+			// thuc hien tinh nang khoi phuc tin giau
+			System.out.println("1. Thuc hien khoi phuc tin giau!");
+			System.out.println("Nhap duong dan den file can xem tin giau: ");
+			String duongDanKhoiPhuc= scanner.nextLine();
+			String tinGiau= KhoiPhuc.KhoiPhuc(duongDanKhoiPhuc);
+			System.out.println("Tin bi giau la: " + tinGiau);
+		}
+		else {
+			System.out.println("Nhap sai roi! 0 hoac 1 thoi!");
+		}
 		
 		// doc file
 //		System.out.println("Nhap duong dan + File: ");
@@ -53,24 +67,17 @@ public class HamMain {
 //		GhiFile.GhiFile(duongDanGhiFile, noiDungGhiFile);
 //		System.out.println("Ghi noi dung vao file thanh cong!");
 		
+		
 		// test tinh nang ma hoa
-		System.out.println("Nhap noi dung hien thi: ");
-		String showText= scanner.nextLine();
+//		System.out.println("Nhap noi dung can ma hoa: ");
+//		String tinGiau= scanner.nextLine();
+//		
+//		int key = MaHoa.TaoKey(tinGiau);
+//		System.out.println("key= do dai chuoi la: " +key);
+//		
+//		String binary = MaHoa.MaHoa(tinGiau);
+//		System.out.println("chuoi sau khi ma hoa: " + binary);
 		
-		System.out.println("Nhap noi dung can ma hoa: ");
-		String hideText= scanner.nextLine();
-		
-		int key = MaHoa.TaoKey(hideText);
-		System.out.println("key= do dai chuoi la: " +key);
-		
-		String binary = MaHoa.MaHoa(hideText);
-		System.out.println("chuoi sau khi ma hoa: " + binary);
-		
-		String EncryptBinary = GiauTin.toSpaceAndTab(showText,binary);
-		System.out.println("Chuoi sau khi encrypt: "+EncryptBinary);
-		
-		String DecryptToBinary = GiaiMa.Decrypt(EncryptBinary, key);
-		System.out.println("Giai ma doan encrypt sang nhi phan: "+DecryptToBinary);
 	}
 
 }

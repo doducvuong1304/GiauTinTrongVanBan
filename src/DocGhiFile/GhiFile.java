@@ -7,7 +7,8 @@ public class GhiFile {
 	public GhiFile() {
 	}
 	
-	// ham ghi file - o day ghi them noi dung chu khong ghi de len noi dung co san
+	// ham ghi file
+	// ghi them noi dung, khong ghi de len noi dung da co
 	public static void GhiFile(String duongDan, String noiDung) {
 		BufferedWriter bw = null;
 		FileWriter fw = null;
